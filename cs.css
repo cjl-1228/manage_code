@@ -53,7 +53,7 @@ body {
 }
 
 .card-front {
-    background-image: url('front.jpg'); /* 替換為前面圖片的路徑 */
+    background-image: url('asset/front.jpg'); /* 替換為前面圖片的路徑 */
     background-size: cover;
     border: none; /* 移除邊框 */
 }
