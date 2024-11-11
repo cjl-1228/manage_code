@@ -19,7 +19,7 @@ function checkForMatch() {
 
     if (card1.getAttribute('data-card') === card2.getAttribute('data-card')) {
         setTimeout(() => {
-            alert("配對成功！");
+            $('#successModal').modal('show'); // 顯示配對成功的 modal
             resetBoard(true);
         }, 500);
     } else {
@@ -31,6 +31,7 @@ function checkForMatch() {
         }, 1000);
     }
 }
+
 
 function resetBoard(isMatch) {
     flippedCards = [];
