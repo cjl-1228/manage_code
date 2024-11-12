@@ -24,6 +24,7 @@ body {
     box-shadow: none; /* 移除陰影 */
     box-shadow: none !important;
     border: none !important;
+    
 }
 
 .card-inner {
@@ -67,3 +68,40 @@ body {
 .card.flipped .card-inner {
     transform: rotateY(180deg);
 }
+
+/* 煙火效果的容器 */
+.fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+/* 單個煙火效果 */
+.firework {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffcc00;
+    animation: explode 1.5s ease-out forwards; /* 增加動畫時間 */
+}
+
+/* 煙火動畫效果 */
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(5); /* 增加煙火的最終尺寸 */
+        opacity: 0;
+    }
+}
+
+
+
