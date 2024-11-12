@@ -1,12 +1,13 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* 將卡片容器置頂對齊 */
+    align-items: flex-start; /* 設置為靠上對齊 */
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     overflow-y: auto; /* 確保網頁縮小時可以上下滑動 */
+    padding-top: 20px; /* 增加與頂部的間距 */
 }
 
 .card-container {
@@ -15,10 +16,12 @@ body {
     grid-gap: 15px;
     justify-content: center;
     align-content: center;
-    height: 100vh;
+    min-height: 100vh; /* 改成 min-height */
     margin: 0 auto;
     padding: 20px;
+    overflow: auto; /* 增加自動滾動 */
 }
+
 
 .card {
     width: 100px;
