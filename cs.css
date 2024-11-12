@@ -1,18 +1,23 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* 將卡片容器置頂對齊 */
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    overflow-y: auto; /* 確保網頁縮小時可以上下滑動 */
 }
 
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(10, 100px); /* 預設每排 10 張卡片 */
+    grid-gap: 15px;
     justify-content: center;
-    max-width: 1300px; /* 設定寬度使得每行最多 10 張卡片 */
+    align-content: center;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .card {
@@ -104,4 +109,23 @@ body {
 }
 
 
+/* 當螢幕寬度小於 1200px 時，每排顯示 5 張卡片 */
+@media (max-width: 1200px) {
+    .card-container {
+        grid-template-columns: repeat(5, 100px);
+    }
+}
 
+/* 當螢幕寬度小於 768px 時，每排顯示 3 張卡片 */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(3, 100px);
+    }
+}
+
+/* 當螢幕寬度小於 480px 時，每排顯示 2 張卡片 */
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: repeat(2, 100px);
+    }
+}
