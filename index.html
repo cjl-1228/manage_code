@@ -19,10 +19,11 @@
 </head>
 
 <body>
+    <div class="card-container" id="cardContainer"></div>
 
 
-    <div class="card-container">
-        <!-- 10組配對的卡片，每組data-card屬性相同 -->
+    <!-- <div class="card-container">
+        
         <div class="card" onclick="flipCard(this)" data-card="1">
             <div class="card-inner">
                 <div class="card-front"></div>
@@ -143,35 +144,56 @@
                 <div class="card-back">後面10</div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- 終極成功的 Modal -->
-    <div class="modal fade" id="finalModal" tabindex="-1" role="dialog" aria-labelledby="finalModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="finalModalLabel">🎉 xx毒品 🎉</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+    <!-- <div class="modal fade" id="finalModal" tabindex="-1" role="dialog" aria-labelledby="finalModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="finalModalLabel">🎉 xx毒品 🎉</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="asset/毒品1.jpg" alt="毒品種類圖片" class="img-fluid mb-3"
+                        style="max-width: 100%; height: auto; border-radius: 10px;">
+                    <p>常見的毒品分為四級<br>
+                        第一級：海洛因、嗎啡、鴉片、古柯鹼及其相類製品。<br>
+                        第二級：罌粟、古柯、大麻、安非他命、搖頭丸、搖腳丸、一粒沙。<br>
+                        第三級：FM2、小白板、丁基原啡因
+                    </p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">確定</button>
+                </div>
             </div>
-            <div class="modal-body text-center">
-                <img src="asset/毒品1.jpg" alt="毒品種類圖片" class="img-fluid mb-3" style="max-width: 100%; height: auto; border-radius: 10px;">
-                <p>常見的毒品分為四級<br>
-                   第一級：海洛因、嗎啡、鴉片、古柯鹼及其相類製品。<br>
-                   第二級：罌粟、古柯、大麻、安非他命、搖頭丸、搖腳丸、一粒沙。<br>
-                   第三級：FM2、小白板、丁基原啡因
-                </p>
-            </div>
-            <div class="modal-footer justify-content-center">
-                <button type="button" class="btn btn-success" data-dismiss="modal">確定</button>
+        </div>
+    </div> -->
+    <div class="modal fade" id="finalModal" tabindex="-1" role="dialog" aria-labelledby="finalModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="finalModalLabel">🎉 配對成功 🎉</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" alt="配對圖片" class="img-fluid mb-3" style="max-width: 100%; height: auto; border-radius: 10px;">
+                    <p>這裡將顯示配對成功的內容。</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">確定</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
+    
+    
 
 
 
