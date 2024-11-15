@@ -139,7 +139,7 @@ body {
 /* 當螢幕寬度小於 480px 時，每排顯示 2 張卡片 */
 @media (max-width: 480px) {
     .card-container {
-        grid-template-columns: repeat(1, 100px);
+        grid-template-columns: repeat(1, 150px);
     }
     .card {
         width: 140px; /* 縮小卡片寬度 */
