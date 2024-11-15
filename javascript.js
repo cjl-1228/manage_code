@@ -24,29 +24,33 @@ function checkForMatch() {
 
 
         const drugDescriptions = {
-            "海洛因": "海洛因是一種強效的麻醉性鎮痛劑，具有極高的成癮性。",
-            "嗎啡": "嗎啡是一種有效的止痛劑，但長期使用可能導致身體依賴。",
-            "鴉片": "鴉片是從罌粟植物中提取的樹脂，可用於鎮痛但容易成癮。",
-            "古柯鹼": "古柯鹼是一種強效中樞神經興奮劑，濫用可能引發嚴重健康問題。",
-            "罌粟": "罌粟是一種植物，提取物可用於製造止痛藥及鴉片類藥物。",
-            "古柯": "古柯是南美原生植物，其葉子含有可提煉古柯鹼的成分。",
-            "大麻": "大麻是一種含有四氫大麻酚（THC）的植物，具有心理活性。",
-            "安非他命": "安非他命是一種中樞神經興奮劑，用於治療多動症和嗜睡症。",
-            "搖頭丸": "搖頭丸是一種合成迷幻藥，會產生興奮及輕微的幻覺效果。",
-            "依托咪酯": "依托咪酯是一種短效的靜脈麻醉劑，用於誘導麻醉。"
+            "合成大麻素": "合成大麻素（Synthetic Cannabinoids）是仿效天然大麻作用的化學合成物，俗稱「K2」或「Spice」，常包裝成香料或草藥形式。可能誘發嚴重的精神錯亂與幻覺，具有高風險副作用。",
+            "喵喵": "喵喵（Mephedrone）是一種合成卡西酮類興奮劑，導致強烈欣快感和高度活躍，但長期使用可能引發心臟損害和精神健康問題。",
+            "MDPV": "MDPV（Methylenedioxypyrovalerone）是一種合成卡西酮類的強效興奮劑，俗稱「浴鹽」，可導致焦慮、幻覺及暴力行為，成癮性高且危害性大。",
+            "搖頭丸": "搖頭丸（MDMA）是一種苯乙胺類致幻興奮劑，帶來情緒高漲與共鳴感，但對中樞神經系統損害嚴重，可能導致認知障礙與情緒失控。",
+            "K他命": "K他命（Ketamine）是一種原為醫療麻醉劑，因解離效應被濫用作迷幻藥。長期使用會導致身心損害，並造成嚴重依賴性。",
+            "PMA": "PMA（Para-Methoxyamphetamine）是一種屬於強效致幻及興奮劑，毒性高，與MDMA作用類似，但更易引發過量中毒，具有極大致命風險。",
+            "GHB": " GHB（Gamma-Hydroxybutyrate）是一種中樞神經抑制劑，常用作迷藥。吸食後可能導致嗜睡、記憶缺失及昏迷，過量會引發呼吸抑制甚至死亡。",
+            "FM2": "氟硝西泮（Flunitrazepam）是一種鎮靜催眠藥，俗稱「FM2」，濫用時可導致短暫失憶及意識混亂，常被不法分子用於犯罪。",
+            "DMT": "DMT（Dimethyltryptamine）是一種色胺類強效致幻劑，短時間內引發強烈幻覺，但會產生極高的精神風險及不可預測的心理反應。",
+            "BZP": "BZP（Benzylpiperazine）是一種哌嗪類合成毒品，具興奮與輕微致幻效果，常見於派對場合，但伴隨心悸、噁心及焦慮等副作用。",
+            "依托咪酯": "依托咪酯（Etomidate）是一種一種短效靜脈麻醉劑，主要用於短時間的麻醉誘導，因具有較少的心血管抑制作用而被廣泛應用。雖能迅速引起意識喪失，但濫用可能引發肌肉抽搐、噁心和長期的腎上腺抑制風險。"
+
         };
 
         const drugImages = {
-            "海洛因": "asset/海洛因.jfif",
-            "嗎啡": "asset/嗎啡.jfif",
-            "鴉片": "asset/鴉片.jfif",
-            "古柯鹼": "asset/古柯鹼.jfif",
-            "罌粟": "asset/罌粟.jfif",
-            "古柯": "asset/古柯.jfif",
-            "大麻": "asset/大麻.jfif",
-            "安非他命": "asset/安非他命.jfif",
+            "合成大麻素": "asset/合成大麻素.jpg",
+            "喵喵": "asset/喵喵.jpg",
+            "MDPV": "asset/MDPV.jpg",
             "搖頭丸": "asset/搖頭丸.jfif",
-            "依托咪酯": "asset/依托咪酯.jfif"
+            "K他命": "asset/K他命.jpg",
+            "PMA": "asset/PMA.jpg",
+            "GHB": "asset/GHB.jpg",
+            "FM2": "asset/FM2.jpg",
+            "DMT": "asset/DMT.jpg",
+            "BZP": "asset/BZP.jpg",
+            "依托咪酯": "asset/依托咪酯.jpg"
+
         };
         
 
@@ -59,7 +63,7 @@ function checkForMatch() {
             $('#finalModal').modal('show'); // 顯示配對成功的 modal
         }, 500);
 
-        if (matchedPairs === 10) {
+        if (matchedPairs === 11) {
             // 如果所有配對完成
             setTimeout(() => {
                 $('#finalModal').modal('show');
@@ -129,9 +133,10 @@ function getRandomColor() {
 
 // 修改 checkGameComplete 函數，加入煙火效果
 function checkGameComplete() {
-    if (matchedPairs === 10) { // 如果所有10組都配對成功
+    if (matchedPairs === 11) { // 如果所有10組都配對成功
         setTimeout(() => {
             $('#finalModal').modal('show'); // 顯示遊戲完成的最終恭喜模態框
+
             launchFireworks(); // 啟動煙火效果
         }, 500);
     }
@@ -139,26 +144,28 @@ function checkGameComplete() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const cardsData = [
-        { cardId: 1, content: "海洛因" },
-        { cardId: 1, content: "海洛因" },
-        { cardId: 2, content: "嗎啡" },
-        { cardId: 2, content: "嗎啡" },
-        { cardId: 3, content: "鴉片" },
-        { cardId: 3, content: "鴉片" },
-        { cardId: 4, content: "古柯鹼" },
-        { cardId: 4, content: "古柯鹼" },
-        { cardId: 5, content: "罌粟" },
-        { cardId: 5, content: "罌粟" },
-        { cardId: 6, content: "古柯" },
-        { cardId: 6, content: "古柯" },
-        { cardId: 7, content: "大麻" },
-        { cardId: 7, content: "大麻" },
-        { cardId: 8, content: "安非他命" },
-        { cardId: 8, content: "安非他命" },
-        { cardId: 9, content: "搖頭丸" },
-        { cardId: 9, content: "搖頭丸" },
-        { cardId: 10, content: "依托咪酯" },
-        { cardId: 10, content: "依托咪酯" }
+        { cardId: 1, content: "合成大麻素", url: "asset/2.png"},
+        { cardId: 1, content: "合成大麻素", url: "asset/2.png" },
+        { cardId: 2, content: "喵喵", url: "asset/3.png" },
+        { cardId: 2, content: "喵喵", url: "asset/3.png" },
+        { cardId: 3, content: "MDPV", url: "asset/4.png" },
+        { cardId: 3, content: "MDPV", url: "asset/4.png" },
+        { cardId: 4, content: "搖頭丸", url: "asset/1.png" },
+        { cardId: 4, content: "搖頭丸", url: "asset/1.png" },
+        { cardId: 5, content: "K他命", url: "asset/5.png" },
+        { cardId: 5, content: "K他命", url: "asset/5.png" },
+        { cardId: 6, content: "PMA", url: "asset/6.png" },
+        { cardId: 6, content: "PMA", url: "asset/6.png" },
+        { cardId: 7, content: "GHB", url: "asset/7.png" },
+        { cardId: 7, content: "GHB", url: "asset/7.png" },
+        { cardId: 8, content: "FM2", url: "asset/8.png" },
+        { cardId: 8, content: "FM2", url: "asset/8.png" },
+        { cardId: 9, content: "DMT", url: "asset/9.png" },
+        { cardId: 9, content: "DMT", url: "asset/9.png" },
+        { cardId: 10, content: "BZP", url: "asset/10.png" },
+        { cardId: 10, content: "BZP", url: "asset/10.png" },
+        { cardId: 11, content: "依托咪酯", url: "asset/11.png" },
+        { cardId: 11, content: "依托咪酯", url: "asset/11.png" },
     ];
 
     // 使用Fisher-Yates洗牌演算法隨機排列
@@ -185,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cardElement.innerHTML = `
                 <div class="card-inner">${cardData.content}
                     <div class="card-front"></div>
-                    <div class="card-back">${cardData.content}</div>
+                    <div class="card-back" style="background-image: url('${cardData.url}');">${cardData.content}</div>
                 </div>
             `;
             cardContainer.appendChild(cardElement);
@@ -197,3 +204,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
+
+function restartGame() {
+    location.reload(); // 重新載入頁面，重置遊戲
+}

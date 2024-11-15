@@ -12,7 +12,7 @@ body {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(10, 100px); /* 預設每排 10 張卡片 */
+    grid-template-columns: repeat(6, 200px); /* 預設每排 10 張卡片 */
     grid-gap: 15px;
     justify-content: center;
     align-content: center;
@@ -24,9 +24,9 @@ body {
 
 
 .card {
-    width: 100px;
-    height: 150px;
-    perspective: 1000px;
+    width: 200px;
+    height: 260px;
+    perspective: 2000px;
     margin: 20px 15px;
     border: none; /* 確保卡片邊框為無 */
     box-shadow: none; /* 移除陰影 */
@@ -62,9 +62,10 @@ body {
 }
 
 .card-front {
-    background-image: url('asset/front.jpg'); /* 替換為前面圖片的路徑 */
+    background-image: url('asset/正面.png'); /* 替換為前面圖片的路徑 */
     background-size: cover;
     border: none; /* 移除邊框 */
+    
 }
 
 .card-back {
@@ -114,21 +115,37 @@ body {
 
 /* 當螢幕寬度小於 1200px 時，每排顯示 5 張卡片 */
 @media (max-width: 1200px) {
+
     .card-container {
-        grid-template-columns: repeat(5, 100px);
+        grid-template-columns: repeat(5, 170px);
+    }
+    .card {
+        width: 160px; /* 縮小卡片寬度 */
+        height: 220px; /* 縮小卡片高度 */
     }
 }
 
 /* 當螢幕寬度小於 768px 時，每排顯示 3 張卡片 */
 @media (max-width: 768px) {
     .card-container {
-        grid-template-columns: repeat(3, 100px);
+        grid-template-columns: repeat(2, 150px);
+    }
+    .card {
+        width: 140px; /* 縮小卡片寬度 */
+        height: 200px; /* 縮小卡片高度 */
     }
 }
 
 /* 當螢幕寬度小於 480px 時，每排顯示 2 張卡片 */
 @media (max-width: 480px) {
     .card-container {
-        grid-template-columns: repeat(2, 100px);
+        grid-template-columns: repeat(1, 100px);
+    }
+    .card {
+        width: 140px; /* 縮小卡片寬度 */
+        height: 200px; /* 縮小卡片高度 */
     }
 }
+
+
+
