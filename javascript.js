@@ -1,6 +1,8 @@
 let flippedCards = [];
 let lockBoard = false;
 let matchedPairs = 0; // 計數配對成功的卡片組數
+let startTime; // 遊戲開始時間（毫秒）
+
 
 function flipCard(cardElement) {
     if (lockBoard) return;  // 防止多次點擊
@@ -66,8 +68,18 @@ function checkForMatch() {
         if (matchedPairs === 11) {
             // 如果所有配對完成
             setTimeout(() => {
+                const endTime = Date.now(); // 遊戲結束時間（毫秒）
+                const elapsedTime = Math.floor((endTime - startTime) / 1000); // 經過時間（秒）
+    
+                // 更新 modal 的內容以顯示完成時間
+                const modalBody = document.querySelector("#finalModal .modal-body p");
+                if (modalBody) {
+                    modalBody.innerHTML += `<br>🎉 你完成遊戲的時間是：${elapsedTime} 秒 🎉`;
+                }
+
                 $('#finalModal').modal('show');
                 launchFireworks(); // 啟動煙火效果
+                document.getElementById('restartGameButton').style.display = 'block';
             }, 500);
         }
 
@@ -135,6 +147,7 @@ function getRandomColor() {
 function checkGameComplete() {
     if (matchedPairs === 11) { // 如果所有10組都配對成功
         setTimeout(() => {
+
             $('#finalModal').modal('show'); // 顯示遊戲完成的最終恭喜模態框
 
             launchFireworks(); // 啟動煙火效果
@@ -198,6 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cardContainer.appendChild(cardElement);
         });
     }
+    startTime = Date.now(); // 記錄遊戲開始的時間（毫秒）
 
     renderCards(); // 呼叫函數以隨機排列並顯示卡片
 });
