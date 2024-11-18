@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cardElement.setAttribute("data-card", cardData.cardId);
 
             cardElement.innerHTML = `
-                <div class="card-inner">${cardData.content}
+                <div class="card-inner">
                     <div class="card-front"></div>
                     <div class="card-back" style="background-image: url('${cardData.url}');">${cardData.content}</div>
                 </div>
